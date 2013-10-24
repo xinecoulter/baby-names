@@ -1,1 +1,6 @@
 <h1>Hi</h1>
+<ol>
+  <% @states.each do |state| %>
+    <li><%= state.state_abbreviation %></li>
+  <% end %>
+</ol>
