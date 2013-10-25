@@ -1,0 +1,33 @@
+<h1>Interactive U.S. Baby Name Infographics</h1>
+<a href="/babynames/search">View statistics for a specific baby name</a>
+
+<form action="/display" method="get">
+  <select name="year">
+    <p>
+      <% @years.each do |year| %>
+        <option value="<%= year %>">
+          <%= year %>
+        </option>
+      <% end %>
+    </select>
+    <button class="btn">Submit</button>
+  </p>
+</form>
+
+<div>
+  <% unless @girl_names == nil %>
+    <ol>
+      <% @girl_names.each do |girl_name| %>
+        <li><%= girl_name.name %>: <%= girl_name.frequency %></li>
+      <% end %>
+    </ol>
+  <% end %>
+
+<!--   <% unless @boy_names == nil %>
+    <ol>
+      <% @boy_names.each do |boy_name| %>
+        <li><%= boy_name.name %>: <%= boy_name.frequency %></li>
+      <% end %>
+    </ol>
+  <% end %> -->
+</div>
